@@ -39,45 +39,77 @@ function createSafeSignatureHTML() {
     };
 
     return `
+<!-- START EMAIL SIGNATURE -->
 <table cellpadding="0" cellspacing="0" border="0" style="margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; background-color: #fafafa; border: 1px solid #e5e7eb; border-radius: 12px; width: 600px;">
     <tr>
-        <td style="padding: 30px; position: relative; overflow: hidden;">
-            <!-- TOP SECTION -->
-            <table cellpadding="0" cellspacing="0" border="0" width="100%" style="border-bottom: 1px solid #e5e7eb; padding-bottom: 20px;">
+        <td style="padding: 30px; background-image: url('decoration_blobs.png'); background-position: bottom right; background-repeat: no-repeat; background-size: 200px auto;">
+            <!--[if gte mso 9]>
+            <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:600px; height:300px;">
+                <v:fill type="frame" src="decoration_blobs.png" color="#fafafa" />
+                <v:textbox inset="0,0,0,0">
+            <![endif]-->
+            
+            <table cellpadding="0" cellspacing="0" border="0" width="100%">
                 <tr>
-                    <!-- INFO SECTION -->
-                    <td align="left" valign="top" style="padding-right: 20px;">
-                        <h1 style="margin: 0 0 5px 0; font-family: Georgia, 'Times New Roman', Times, serif; font-size: 28px; font-weight: 700; color: #1f2937; line-height: 1.2;">${name}</h1>
-                        <p style="margin: 0 0 20px 0; font-family: Arial, Helvetica, sans-serif; font-size: 18px; color: #6b7280; line-height: 1.4;">${title}</p>
-                        
-                        <table cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 8px;">
+                    <td>
+                        <!-- TOP SECTION -->
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%" style="border-bottom: 1px solid #e5e7eb; padding-bottom: 20px;">
                             <tr>
-                                <td style="font-family: Arial, Helvetica, sans-serif; font-size: 15px; color: #374151; line-height: 1;">
-                                    <img src="email_icon.png" width="16" style="display: block; border: 0; margin-right: 8px; float: left;"> <a href="mailto:${email}" style="color: #374151; text-decoration: none; vertical-align: middle; line-height: 16px;" class="signature-link">${email}</a>
+                                <!-- INFO SECTION -->
+                                <td align="left" valign="top" style="padding-right: 20px;">
+                                    <h1 style="margin: 0 0 5px 0; font-family: Georgia, 'Times New Roman', Times, serif; font-size: 28px; font-weight: 700; color: #1f2937; line-height: 1.2;">${name}</h1>
+                                    <p style="margin: 0 0 20px 0; font-family: Arial, Helvetica, sans-serif; font-size: 18px; color: #6b7280; line-height: 1.4;">${title}</p>
+                                    
+                                    <table cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 8px;">
+                                        <tr>
+                                            <td style="font-family: Arial, Helvetica, sans-serif; font-size: 15px; color: #374151; line-height: 1;">
+                                                <img src="email_icon.png" width="16" style="display: block; border: 0; margin-right: 8px; float: left;"> <a href="mailto:${email}" style="color: #374151; text-decoration: none; vertical-align: middle; line-height: 16px;" class="signature-link">${email}</a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    
+                                    <table cellpadding="0" cellspacing="0" border="0">
+                                        <tr>
+                                            <td style="font-family: Arial, Helvetica, sans-serif; font-size: 15px; color: #374151; line-height: 1;">
+                                                <img src="phone_icon.png" width="16" style="display: block; border: 0; margin-right: 8px; float: left;"> <a href="tel:${phone.replace(/\D/g, '')}" style="color: #374151; text-decoration: none; vertical-align: middle; line-height: 16px;" class="signature-link">${phone}</a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                
+                                <!-- LOGO SECTION -->
+                                <td align="right" valign="top" width="140">
+                                    <table cellpadding="0" cellspacing="0" border="0">
+                                        <tr>
+                                            <td align="center">
+                                                <a href="https://${companyWebsite}" target="_blank" rel="noopener" style="text-decoration: none;" class="signature-link-branding">
+                                                    <img src="${logoUrl}" alt="Logo" width="120" style="display: block; border: 0; margin-bottom: 10px;">
+                                                </a>
+                                                <a href="https://${companyWebsite}" target="_blank" rel="noopener" style="text-decoration: none; font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: 600;" class="signature-link-branding">
+                                                    ${formatAiLink(companyWebsite, '#d97706')}
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </table>
                                 </td>
                             </tr>
                         </table>
-                        
-                        <table cellpadding="0" cellspacing="0" border="0">
+
+                        <!-- BOTTOM SECTION -->
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top: 20px;">
                             <tr>
-                                <td style="font-family: Arial, Helvetica, sans-serif; font-size: 15px; color: #374151; line-height: 1;">
-                                    <img src="phone_icon.png" width="16" style="display: block; border: 0; margin-right: 8px; float: left;"> <a href="tel:${phone.replace(/\D/g, '')}" style="color: #374151; text-decoration: none; vertical-align: middle; line-height: 16px;" class="signature-link">${phone}</a>
+                                <td valign="middle" style="width: 75px;">
+                                    <a href="https://${secondaryWebsite}" target="_blank" rel="noopener" style="text-decoration: none;" class="signature-link-branding">
+                                        <img src="https://yibby.ai/mascot.png" alt="Mascot" width="60" style="display: block; border: 0;">
+                                    </a>
                                 </td>
-                            </tr>
-                        </table>
-                    </td>
-                    
-                    <!-- LOGO SECTION -->
-                    <td align="right" valign="top" width="140">
-                        <table cellpadding="0" cellspacing="0" border="0">
-                            <tr>
-                                <td align="center">
-                                    <a href="https://${companyWebsite}" target="_blank" rel="noopener" style="text-decoration: none;" class="signature-link-branding">
-                                        <img src="${logoUrl}" alt="Logo" width="120" style="display: block; border: 0; margin-bottom: 10px;">
-                                    </a>
-                                    <a href="https://${companyWebsite}" target="_blank" rel="noopener" style="text-decoration: none; font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: 600;" class="signature-link-branding">
-                                        ${formatAiLink(companyWebsite, '#d97706')}
-                                    </a>
+                                <td valign="middle" style="padding-left: 15px;">
+                                    <h2 style="margin: 0 0 5px 0; font-family: Georgia, 'Times New Roman', Times, serif; font-size: 24px; font-weight: 700; color: #d97706;">
+                                        <a href="https://${secondaryWebsite}" target="_blank" rel="noopener" style="text-decoration: none; color: #d97706;" class="signature-link-branding">
+                                            ${formatAiLink(secondaryName, '#d97706')}
+                                        </a>
+                                    </h2>
+                                    <p style="margin: 0; font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #6b7280;">${secondaryTagline}</p>
                                 </td>
                             </tr>
                         </table>
@@ -85,35 +117,15 @@ function createSafeSignatureHTML() {
                 </tr>
             </table>
 
-            <!-- BOTTOM SECTION -->
-            <table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top: 20px;">
-                <tr>
-                    <td valign="middle" style="width: 75px;">
-                        <a href="https://${secondaryWebsite}" target="_blank" rel="noopener" style="text-decoration: none;" class="signature-link-branding">
-                            <img src="https://yibby.ai/mascot.png" alt="Mascot" width="60" style="display: block; border: 0;">
-                        </a>
-                    </td>
-                    <td valign="middle" style="padding-left: 15px;">
-                        <h2 style="margin: 0 0 5px 0; font-family: Georgia, 'Times New Roman', Times, serif; font-size: 24px; font-weight: 700; color: #d97706;">
-                            <a href="https://${secondaryWebsite}" target="_blank" rel="noopener" style="text-decoration: none; color: #d97706;" class="signature-link-branding">
-                                ${formatAiLink(secondaryName, '#d97706')}
-                            </a>
-                        </h2>
-                        <p style="margin: 0; font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #6b7280;">${secondaryTagline}</p>
-                    </td>
-                </tr>
-            </table>
-
-            <!-- DECORATIVE BLOBS (Note: Background blobs use relative positioning which can be tricky in some Outlook versions, but is the standard for this design) -->
-            <div style="position: absolute; right: 0; bottom: 0; z-index: 0; pointer-events: none;">
-                <svg width="200" height="100" viewBox="0 0 200 100" preserveAspectRatio="none" style="display: block;">
-                    <path d="M0,100 C50,100 120,80 200,10 L200,100 Z" fill="#b7ccb9" />
-                    <path d="M0,100 C80,100 140,90 200,50 L200,100 Z" fill="#e9e4d1" />
-                </svg>
-            </div>
+            <!--[if gte mso 9]>
+                </v:textbox>
+            </v:rect>
+            <![endif]-->
         </td>
     </tr>
-</table>`.trim();
+</table>
+<!-- END EMAIL SIGNATURE -->
+    `.trim();
 }
 
 function generateSignature() {
