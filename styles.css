@@ -1,0 +1,449 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #6366f1;
+    --primary-dark: #4f46e5;
+    --secondary-color: #ec4899;
+    --success-color: #10b981;
+    --background: #0f172a;
+    --surface: #1e293b;
+    --surface-light: #334155;
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --border-color: #334155;
+    --signature-bg: #ffffff;
+    --signature-text: #1f2937;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: var(--text-primary);
+    min-height: 100vh;
+    padding: 2rem 1rem;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: fadeInDown 0.6s ease-out;
+}
+
+.header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+}
+
+.header p {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    animation: fadeInUp 0.6s ease-out 0.2s backwards;
+}
+
+/* Editor Section */
+.editor-section {
+    background: var(--surface);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.editor-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.form-group input {
+    padding: 0.875rem 1rem;
+    background: var(--background);
+    border: 2px solid var(--border-color);
+    border-radius: 0.75rem;
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.form-group input::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.5;
+}
+
+/* Preview Section */
+.preview-section {
+    background: var(--surface);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.preview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.preview-header h2 {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+}
+
+.copy-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.5rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: white;
+    border: none;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+
+.copy-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+}
+
+.copy-btn:active {
+    transform: translateY(0);
+}
+
+.signature-preview {
+    background: var(--signature-bg);
+    border-radius: 1rem;
+    padding: 2rem;
+    min-height: 300px;
+    border: 2px solid #e5e7eb;
+}
+
+/* Email Signature Styles */
+.email-signature {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--signature-text);
+    max-width: 600px;
+}
+
+.signature-container {
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 30px;
+    background: #fafafa;
+    position: relative;
+    overflow: hidden;
+}
+
+.signature-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e5e7eb;
+    position: relative;
+    z-index: 2;
+}
+
+.signature-info {
+    flex: 1;
+}
+
+.signature-name {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0 0 5px 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.signature-title {
+    font-size: 18px;
+    color: #6b7280;
+    margin: 0 0 20px 0;
+}
+
+.signature-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    color: #374151;
+}
+
+.contact-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.signature-logo-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.signature-logo-container a {
+    display: inline-block;
+}
+
+.signature-logo {
+    width: 120px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.signature-info a,
+.signature-company-website,
+.secondary-name,
+.signature-link,
+.signature-link-branding {
+    transition: all 0.2s ease;
+}
+
+.signature-link:hover {
+    color: #d97706 !important;
+    text-decoration: underline !important;
+}
+
+.signature-company-website:hover,
+.signature-link-branding:hover {
+    opacity: 0.7;
+    text-decoration: underline !important;
+}
+
+.ai-domain {
+    color: #000000 !important;
+}
+
+.signature-secondary {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+    z-index: 2;
+}
+
+.secondary-icon {
+    font-size: 50px;
+}
+
+.signature-secondary a {
+    display: inline-block;
+    line-height: 0;
+}
+
+.secondary-icon-img {
+    width: 60px;
+    height: auto;
+    display: block;
+}
+
+.secondary-content h3 {
+    font-size: 24px;
+    margin: 0 0 5px 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.secondary-name {
+    color: #d97706;
+    font-weight: 700;
+}
+
+.secondary-name .ai-domain {
+    color: #000000 !important;
+}
+
+.secondary-tagline {
+    font-size: 14px;
+    color: #6b7280;
+    margin: 0;
+}
+
+.secondary-link {
+    color: #3b82f6;
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.secondary-link .ai-domain {
+    color: #000000 !important;
+}
+
+.secondary-link:hover {
+    text-decoration: underline;
+}
+
+.signature-decoration {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 200px;
+    height: 100px;
+    opacity: 1;
+    z-index: 1;
+}
+
+.blob {
+    fill-opacity: 1;
+}
+
+.blob-1 {
+    fill: #b7ccb9;
+    /* Sage green */
+}
+
+.blob-2 {
+    fill: #e9e4d1;
+    /* Cream beige */
+}
+
+/* Notification */
+.notification {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: linear-gradient(135deg, var(--success-color), #059669);
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    box-shadow: 0 10px 40px rgba(16, 185, 129, 0.3);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.notification.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+
+    .header h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 640px) {
+    body {
+        padding: 1rem 0.5rem;
+    }
+
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .editor-section,
+    .preview-section {
+        padding: 1.5rem;
+    }
+
+    .signature-main {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .copy-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .notification {
+        left: 1rem;
+        right: 1rem;
+        text-align: center;
+    }
+}
