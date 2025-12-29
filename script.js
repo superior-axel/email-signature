@@ -42,13 +42,7 @@ function createSafeSignatureHTML() {
 <!-- START EMAIL SIGNATURE -->
 <table cellpadding="0" cellspacing="0" border="0" style="margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; background-color: #fafafa; border: 1px solid #e5e7eb; border-radius: 12px; width: 600px;">
     <tr>
-        <td style="padding: 30px; background-image: url('decoration_blobs.png'); background-position: bottom right; background-repeat: no-repeat; background-size: 200px auto;">
-            <!--[if gte mso 9]>
-            <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:600px; height:300px;">
-                <v:fill type="frame" src="decoration_blobs.png" color="#fafafa" />
-                <v:textbox inset="0,0,0,0">
-            <![endif]-->
-            
+        <td style="padding: 30px;">
             <table cellpadding="0" cellspacing="0" border="0" width="100%">
                 <tr>
                     <td>
@@ -116,11 +110,6 @@ function createSafeSignatureHTML() {
                     </td>
                 </tr>
             </table>
-
-            <!--[if gte mso 9]>
-                </v:textbox>
-            </v:rect>
-            <![endif]-->
         </td>
     </tr>
 </table>

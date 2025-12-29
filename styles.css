@@ -335,30 +335,6 @@ body {
     text-decoration: underline;
 }
 
-.signature-decoration {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 200px;
-    height: 100px;
-    opacity: 1;
-    z-index: 1;
-}
-
-.blob {
-    fill-opacity: 1;
-}
-
-.blob-1 {
-    fill: #b7ccb9;
-    /* Sage green */
-}
-
-.blob-2 {
-    fill: #e9e4d1;
-    /* Cream beige */
-}
-
 /* Notification */
 .notification {
     position: fixed;
